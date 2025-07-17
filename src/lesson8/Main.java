@@ -7,6 +7,9 @@ public class Main {
         String reversed = stringReverse(first);
         System.out.println(reversed);
         System.out.println(findWordPosition("Apple", "Plant"));
+        String palindrome = "TET";
+        String nonPalindrome = "VasyaGay";
+        System.out.println(isPalindrome(palindrome));
     }
 
     static int findSymbolOccurance(String text, char symbol) {
@@ -28,4 +31,16 @@ public class Main {
     static int findWordPosition(String source, String target) {
         return source.indexOf(target);
     }
+    static boolean isPalindrome (String str){
+        var chars = str.toCharArray();
+        var left = 0;
+        var right = str.length() -1;
+        while (left<right){
+            if (chars[left]!=chars[right]){
+                return false;
+            }
+            left++;
+            right--;
+        }return true;
+}
 }
