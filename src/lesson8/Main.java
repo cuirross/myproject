@@ -10,6 +10,8 @@ public class Main {
         String palindrome = "TET";
         String nonPalindrome = "VasyaGay";
         System.out.println(isPalindrome(palindrome));
+        FindWordGame fruits = new FindWordGame();
+        fruits.startGame();
     }
 
     static int findSymbolOccurance(String text, char symbol) {
