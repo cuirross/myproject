@@ -6,6 +6,7 @@ public class Main {
         String first = "hello";
         String reversed = stringReverse(first);
         System.out.println(reversed);
+        System.out.println(findWordPosition("Apple", "Plant"));
     }
 
     static int findSymbolOccurance(String text, char symbol) {
@@ -23,5 +24,8 @@ public class Main {
             reverse += str.charAt(i);
         }
         return reverse;
+    }
+    static int findWordPosition(String source, String target) {
+        return source.indexOf(target);
     }
 }
