@@ -1,28 +1,71 @@
 package lesson9;
 
 public class Employee {
-    private EmployeePrivateDetails employeePrivateDetails;
+    private String email;
+    private String telephone;
+    private int salary;
+    private String fullName;
+    private String jobPosition;
+    private int age;
 
-    public Employee(String fullName, String jobPosition, String email, String telephone, int salary, int age) {
-        this.employeePrivateDetails = new EmployeePrivateDetails();
-        employeePrivateDetails.setEmail(email);
-        employeePrivateDetails.setSalary(salary);
-        employeePrivateDetails.setTelephone(telephone);
-        employeePrivateDetails.setFullName(fullName);
-        employeePrivateDetails.setJobPosition(jobPosition);
-        employeePrivateDetails.setAge(age);
-    }
-    public void printEmployeeInfo (){
-        System.out.println("Fullname: " + employeePrivateDetails.getFullName());
-        System.out.println("Job Position: " + employeePrivateDetails.getJobPosition());
-        System.out.println("Email: " + employeePrivateDetails.getEmail());
-        System.out.println("Telephone: " + employeePrivateDetails.getTelephone());
-        System.out.println("Salary: " + employeePrivateDetails.getSalary());
-        System.out.println("Age: " + employeePrivateDetails.getAge());
-    }
-    public int getAge(){
-       return employeePrivateDetails.getAge();
+    public Employee(String email, String telephone, int salary, String fullName, String jobPosition, int age) {
+        this.email = email;
+        this.telephone = telephone;
+        this.salary = salary;
+        this.fullName = fullName;
+        this.jobPosition = jobPosition;
+        this.age = age;
     }
 
+    public Employee(String fullName, int age) {
+        this.fullName = fullName;
+        setAge(age);
+
+    }
+
+    public void setAge(int age) {
+        if (age >= 20) {
+            this.age = age;
+            }
+        else{
+            System.out.println("Не принимается < 20");
+        }
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getJobPosition() {
+        return jobPosition;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeePrivateDetails{" +
+                "email='" + email + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", salary=" + salary +
+                ", fullName='" + fullName + '\'' +
+                ", jobPosition='" + jobPosition + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
 
